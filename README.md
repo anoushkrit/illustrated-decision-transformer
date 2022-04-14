@@ -1,5 +1,11 @@
 
-# Decision Transformer
+# Illustrated Decision Transformer
+
+An oversimplified explanation of Decision Transformer which will further extend to Online Decision Transformer. 
+Most of the details would be mentioned in the wiki of the repo. Please find the description by the authors below.
+
+
+
 
 Lili Chen\*, Kevin Lu\*, Aravind Rajeswaran, Kimin Lee, Aditya Grover, Michael Laskin, Pieter Abbeel, Aravind Srinivas†, and Igor Mordatch†
 
