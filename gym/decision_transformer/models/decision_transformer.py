@@ -6,10 +6,11 @@ import transformers # Is this from huggingface?
 
 from decision_transformer.models.model import TrajectoryModel
 from decision_transformer.models.trajectory_gpt2 import GPT2Model 
-# used for taking GPT2Model config values only and not the vocabulary set
+## used for taking GPT2Model config values only and not the vocabulary set
 
 
 class DecisionTransformer(TrajectoryModel):
+    ## Inheriting the properties of TrajectoryModel Class
 
     """
     This model uses GPT to model (Return_1, state_1, action_1, Return_2, state_2, ...)
@@ -30,10 +31,16 @@ class DecisionTransformer(TrajectoryModel):
         When Decision Transformer object is called during model.train()
         @state_dim: state dimensions
         @act_dim: actions dimensions
-        @hidden_size: size of the  """
+        @hidden_size: size of the hidden layer
+        @max_length: maximum length of the step size? 
+        @max_ep_length: maximum episode length, but are there any epochs/episodes in the same. Is episodes synonymous to epochs here?
+        @action_tanh: activation function applied when action is being predicted."""
+
         super().__init__(state_dim, act_dim, max_length=max_length)
+        ## self initialization of the object instance with these values when the object is created, otherwise call function is required for the same.
 
         self.hidden_size = hidden_size
+        ## 
         config = transformers.GPT2Config(
             vocab_size=1,  # doesn't matter -- we don't use the vocab
             n_embd=hidden_size,
